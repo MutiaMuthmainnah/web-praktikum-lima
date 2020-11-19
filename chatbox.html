@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" >
+    <title>Chat Box</title>
+    <style>
+        body{
+            background-color: rgb(155, 206, 172);
+        }
+        .result-chat {
+            height: 300px;
+            width: 20%;
+            margin: auto;
+            background-color: rgba(193,245,210,1);
+            color: rgb(10, 9, 9);
+            border-radius : 15px;    
+            border: 2px solid #1dc153;
+        }
+       	.chat{
+       		width: 20%;
+       		height: 50px;
+          margin: auto;
+       	}
+        input{
+          width:76%;
+          border-radius: 5px;
+        }
+        button:hover {
+            background-color: #4CAF50; /* Green */
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="result-chat"></div><br>
+        <div class="chat">
+              <input type="text" class="input-chat">
+              <button class="btn-chat">Kirim</button>
+        </div>
+    </main>
+
+    <script>
+        let resultChat = document.querySelector(".result-chat");
+        const inputChat = document.querySelector(".input-chat");
+        const btnChat = document.querySelector(".btn-chat");
+
+        btnChat.addEventListener("click", function() {
+            resultChat.innerHTML = resultChat.innerHTML + "<br>" + inputChat.value;
+            inputChat.value = "";
+        })
+    </script>
+</body>
+</html>
